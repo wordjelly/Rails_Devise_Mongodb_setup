@@ -28,7 +28,23 @@ the omniauth details for google are to be put here:
 How to get the client-id and the google-serret.
 
 Go to Google Developer console ->
+
 Create A New Project ->
+
+Now Click on Google-Plus-Api, GMail-Api and any other Api that you want, when you go to the Api, click enable ->
+
+Enable as many as you want ->
+
+Now Click on Credentials in the side-bar ->
+
+Now Click on OAuth-Consent-Screen. ->
+
+Now just enter a name for the project (GitHub-Documentation) ->
+
+Now click on "Create Credentials" ->
+
+Now click on "OAuth-whatever" ->
+
 
 
 

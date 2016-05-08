@@ -120,3 +120,25 @@ config.autoload_paths << Rails.root.join('lib')
 
 ===
 
+Now the next steps configure a User Model ,controllers and views for the same.
+
+```
+rails g devise User
+```
+
+Go and add :omniauthable and :confirmable modules to the user module.
+
+Then continue
+
+```
+rails g devise:views user
+rails g devise:controllers user
+```
+
+Now go and change the routes file so that the controllers point to the views in the correct users subfolders.
+
+```
+devise_for :users, controllers: { sessions: "users/sessions" }
+```
+
+Run rails s , and see that sign_in, sign_up, omniauth and other things are working, before proceeding.

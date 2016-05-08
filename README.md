@@ -138,7 +138,9 @@ rails g devise:controllers user
 Now go and change the routes file so that the controllers point to the views in the correct users subfolders.
 
 ```
-devise_for :users, controllers: { sessions: "users/sessions" }
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :registrations => "users/registrations", :confirmations => "users/confirmations", :passwords => "users/passwords", :sessions => "users/sessions"}
 ```
+
+delete the _devise_ subfolder from the views folder because it will have a _users_ subfolder already 
 
 Run rails s , and see that sign_in, sign_up, omniauth and other things are working, before proceeding.

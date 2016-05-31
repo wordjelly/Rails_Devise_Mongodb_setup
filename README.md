@@ -6,7 +6,17 @@ How to setup rails with devise and mongodb with token_auth and omni_auth
 ```
 rails new myapp --skip-active-record
 ```
-Use the GemFile included with this app.
+Add the following to the gemfile
+
+```
+gem 'mongoid', '~> 5.1.0'
+gem 'simple_token_authentication', '~> 1.0'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+```
 
 ```
 bundle install
@@ -126,7 +136,13 @@ Now the next steps configure a User Model ,controllers and views for the same.
 rails g devise User
 ```
 
-Go and add :omniauthable and :confirmable modules to the user module.
+
+Add the following to the user model
+
+```
+:omniauthable, :confirmable
+```
+
 
 Then continue
 

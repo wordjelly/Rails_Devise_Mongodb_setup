@@ -148,7 +148,7 @@ Then continue
 
 ```
 rails g devise:views user
-rails g devise:controllers user
+rails g devise:controllers users
 ```
 
 Now go and change the routes file so that the controllers point to the views in the correct users subfolders.

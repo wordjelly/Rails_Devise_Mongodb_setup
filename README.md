@@ -75,7 +75,35 @@ config.omniauth :google_oauth2, 'google client id', 'google secret', {
   }
 ```
 
-A similar procedure has to be followed for any oauth providers that you wish to support.
+#### Setting up FaceBook OAuth
+
+Go to the following [link](http://developers.facebook.com/apps)
+
+If you are not signed in to facebook, sign in, and then if you are not "Registered" as a developer account, it will ask you to register, do that.
+
+After that it will ask you to create a new app.
+
+It will give options namely, IOS, Android, and some others.
+Don't choose them, instead choose __basic setup__.
+After that choose and App_name, give it a category and click create. 
+Then go to the __FaceBook-Login__ under the __Products__ section in the Dashboard.
+
+Let the defaults be, basically just check that "Client_OAuth_Login" is enabled.
+Here fill in the __valid-redirect-url__.
+For devise, with facebook, this url becomes:
+
+__http://localhost:3000/users/auth/facebook_oauth2/callback__
+
+```
+config.omniauth :facebook, "facebook_app_id", "faebook_app_secret",{
+    :scope => 'email',
+    :info_fields => 'first_name,last_name,email,work',
+    :display => 'page'
+  }
+```
+
+
+
 
 ### Custom Failure Strategy for failed sign-ins in devise
 

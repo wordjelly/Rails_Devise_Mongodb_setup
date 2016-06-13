@@ -62,7 +62,7 @@ Now in the popup box, fill in the __Authorized Redirect Urls__ with the redirect
 
 For localhost using Devise this is __http://localhost:3000/users/auth/google_oauth2/callback__
 
-Then click create->
+Then click create, maybe click it again till you get the dialog that gives you the app_id and the secret.
 
 It will then provide you with the client id, and client secret, go to the devise.rb configuration file and under the commented out omniauth section, add the following:
 
@@ -166,10 +166,11 @@ rails g devise User
 ```
 
 
-Add the following to the user model
+Enable omniauthable, by adding a new line after all the other devise modules as follows:
 
 ```
-:omniauthable, :confirmable
+devise :confirmable.......
+devise :omniauthable, :omniauth_providers => [:google_oauth2,:facebook]
 ```
 
 

@@ -36,6 +36,8 @@ config.navigational_formats = [:"*/*", :html, :json, :js]
 
 ###Omniauth
 
+__One hint to solve problems with invalid callback urls, is to run rake routes and see the callback urls, there for any provider that you have specified, and ensure that you are pasting the same links into the providers whitelist for callback urls. Devise may change the way it generates the callback urls, and I had this problem with the facebook callback url and solved it by checking the callback url in the 'rake routes' and sure enough it was not what I had pasted in the whitelist in the facebook app redirect url__
+
 
 the omniauth details for google are to be put here:
 How to get the client-id and the google-serret.
@@ -93,7 +95,7 @@ Let the defaults be, basically just check that "Client_OAuth_Login" is enabled.
 Here fill in the __valid-redirect-url__.
 For devise, with facebook, this url becomes:
 
-__http://localhost:3000/users/auth/facebook_oauth2/callback__
+__http://localhost:3000/users/auth/facebookcallback__
 
 ```
 config.omniauth :facebook, "facebook_app_id", "faebook_app_secret",{

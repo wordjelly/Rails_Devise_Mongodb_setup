@@ -106,6 +106,36 @@ config.omniauth :facebook, "facebook_app_id", "faebook_app_secret",{
 ```
 
 
+#### Model and Controller Changes for OmniAuth
+
+
+
+In the user model add the following line to enable omniauth.
+The first line is the usual devise modules, and then add another line for ominauth.
+
+```
+devise :confirmable.......
+devise :omniauthable, :omniauth_providers => [:google_oauth2,:facebook]
+```
+
+
+In the __omniauth_callbacks_controller.rb__ you have to specify a method with the same name as the name of the provider. This should be the same as the names specified in the omniauth_providers line above, and also the same as that in the devise.rb configuration file.
+
+```
+##omniauth_callbacks_controller.rb
+
+def facebook
+
+end
+
+
+
+def google_oauth2
+
+end
+```
+
+
 
 
 ### Custom Failure Strategy for failed sign-ins in devise
@@ -165,14 +195,6 @@ Now the next steps configure a User Model ,controllers and views for the same.
 
 ```
 rails g devise User
-```
-
-
-Enable omniauthable, by adding a new line after all the other devise modules as follows:
-
-```
-devise :confirmable.......
-devise :omniauthable, :omniauth_providers => [:google_oauth2,:facebook]
 ```
 
 

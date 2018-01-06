@@ -88,18 +88,21 @@ Go to the following [link](http://developers.facebook.com/apps)
 
 If you are not signed in to facebook, sign in, and then if you are not "Registered" as a developer account, it will ask you to register, do that.
 
-After that it will ask you to create a new app.
+After that click "Create New App" on the top right side.
 
-It will give options namely, IOS, Android, and some others.
-Don't choose them, instead choose __basic setup__.
-After that choose and App_name, give it a category and click create. 
+After that go and choose Dashboard.
 Then go to the __FaceBook-Login__ under the __Products__ section in the Dashboard.
+It will give options namely, IOS, Android, and some others.
+Choose "Web" and enter the web page url as "http://locahost:3000"
 
-Let the defaults be, basically just check that "Client_OAuth_Login" is enabled.
-Here fill in the __valid-redirect-url__.
-For devise, with facebook, this url becomes:
+Now click save.
+Then go the left hand side of the page and click "Settings"
 
-__http://localhost:3000/users/auth/facebookcallback__
+Leave all the settings as default and go and add the callback url, as per your app.
+
+Then click save
+
+Now go to dashboard and pick up the api_key and api_secret, and copy and paste it as follows:
 
 ```
 config.omniauth :facebook, "facebook_app_id", "faebook_app_secret",{

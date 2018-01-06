@@ -56,9 +56,13 @@ Now Click on OAuth-Consent-Screen. ->
 
 Now just enter a name for the project (GitHub-Documentation) ->
 
+Now click "Save"
+
+Now click on credentials in the top bar ->
+
 Now click on "Create Credentials" ->
 
-Now click on "OAuth-whatever" ->
+Now click on "OAuth-Client-Id" ->
 
 Now in the popup box, fill in the __Authorized Redirect Urls__ with the redirect callback url.
 
